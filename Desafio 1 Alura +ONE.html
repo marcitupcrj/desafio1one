@@ -1,0 +1,164 @@
+<html>
+
+<head>
+    <!-- <link rel="stylesheet" href="CSS teste desafio.css"> -->
+
+    <style>
+        .title {
+            color: whitesmoke;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            font-size: 50px;
+            font-weight: bolder;
+
+        }
+
+        .inicial {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 100px;
+            margin-bottom: 50px;
+            margin-left: 50px;
+        }
+
+        .cripto {
+            display: flex;
+            width: 450px;
+            height: 300px;
+            background-color: rgb(238, 236, 128);
+            flex-direction: column;
+            align-items: center;
+            border-radius: 12px;
+        }
+
+        .descripto {
+            display: flex;
+            flex-direction: column;
+            width: 450px;
+            height: 300px;
+            background-color: rgb(238, 236, 128);
+            align-items: center;
+            border-radius: 12px;
+
+        }
+
+        .descript {
+            display: flex;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .btn {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 12px;
+            font-weight: bolder;
+            margin-right: 20px;
+        }
+
+        .btn:hover {
+            background-color: green;
+            /* Green */
+            color: white;
+        }
+
+        .cjtbtn {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        body {
+            background-image: url("./tec5.jpg");
+            background-size: 100%;
+        }
+
+        p {
+            color: black;
+            font-size: 24px;
+            margin-bottom: 50px;
+            font-weight: bold;
+
+        }
+
+        .foot {
+            margin-left: 25px;
+            color: rgb(112, 194, 166);
+            margin-top: 10px;
+
+        }
+    </style>
+
+    <script>
+
+        function criptografar() {
+            var input = document.getElementById("criptografar").value;
+
+            let result = input
+                .replaceAll("e", "enter")
+                .replaceAll("i", "imes")
+                .replaceAll("a", "ai")
+                .replaceAll("o", "ober")
+                .replaceAll("u", "ufat");
+            document.getElementById("descriptografar").value = result;
+        }
+
+        function copiar() {
+            var content = document.getElementById('descriptografar');
+            content.select();
+            document.execCommand('copy');
+            alert("Copiado!");
+        }
+
+        function descriptografar(){
+            var input = document.getElementById("criptografar").value;
+
+            let result = input
+                .replaceAll("enter", "e")
+                .replaceAll("imes", "i")
+                .replaceAll("ai", "a")
+                .replaceAll("ober", "o")
+                .replaceAll("ufat", "u");
+            document.getElementById("descriptografar").value = result;
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1 class="title">Challenger: Código Secreto</h1>
+
+    <div class="inicial">
+
+        <div class="cripto">
+            <p>Apenas letras minúsculas e sem acento</p>
+            <textarea name="criptografar" style="font-size: 18px" id="criptografar" cols="40" rows="10"></textarea>
+            <div class="cjtbtn">
+                <button class="btn" type="button" onclick="criptografar()">Criptografar</button>
+                <button class="btn" type="button" onclick= "descriptografar()">Descriptografar</button>
+            </div>
+        </div>
+
+        <div class="descripto">
+            <p>Resultado</p>
+            <textarea name="descriptografar" style="font-size: 18px" id="descriptografar" cols="40" rows="10"></textarea>
+            <button class="btn" type="button" onclick="copiar()">Copiar</button>
+        </div>
+
+    </div>
+
+    <p class="foot"><b>Desenvolvido por Marcitu Silva</b></p>
+
+</body>
+
+</html>
